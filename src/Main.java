@@ -3,9 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        ArithmeticCalculator cal = new ArithmeticCalculator();
         int num1, num2;
-        char operator;
 
         while(true) {
             //숫자 입력
@@ -29,10 +28,11 @@ public class Main {
 
             //사칙연산 기호 입력
             System.out.print("사칙연산 기호를 입력하시오 : ");
-            operator = scanner.next().charAt(0);
+            char operator = scanner.next().charAt(0);
+            OperatorType symbol = OperatorType.getOpType(operator);
 
             //결과
-           System.out.println("결과: " + cal.calculate(num1, num2, operator));
+           System.out.println("결과: " + cal.calculate(num1, num2, symbol));
 
             //계속할지 여부 확인
             System.out.println("더 계산하시겠습니까? (y/n)");
@@ -43,6 +43,7 @@ public class Main {
                 System.out.println(cal.getResult());
                 break;
             }
+            else throw new IllegalArgumentException("y/n으로만 답할 수 있습니다.");
         }
 
         //계산결과 삭제
@@ -52,7 +53,9 @@ public class Main {
             if (answer.equals("yes")) {
                 cal.removeResults();
                 System.out.println(cal.getResult());
-            } else if (answer.equals("no")) break;
+            }
+            else if (answer.equals("no")) break;
+            else throw new IllegalArgumentException("y/n으로만 답할 수 있습니다.");
         }
     }
 }

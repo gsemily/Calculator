@@ -1,24 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class ArithmeticCalculator {
     private List<Integer> results = new ArrayList<>();
 
-    public int calculate(int n1, int n2, char op) {
+    public int calculate(int n1, int n2, OperatorType op) {
         int result = 0;
         boolean flag = true;
 
         switch (op) {
-            case '+':
+            case PLUS:
                 result = n1 + n2;
                 break;
-            case '-':
+            case MINUS:
                 result = n1 - n2;
                 break;
-            case '*':
+            case MULTI:
                 result = n1 * n2;
                 break;
-            case '/':
+            case DIVIDE:
                 if (n2 == 0) {
                     System.out.println("0으로 나눌 수 없습니다.");
                     return 0;

@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArithmeticCalculator {
-    private List<Integer> results = new ArrayList<>();
+public class ArithmeticCalculator<T> {
+    private List<Double> results = new ArrayList<>();
+    public ArithmeticCalculator(){}
 
-    public int calculate(int n1, int n2, OperatorType op) {
-        int result = 0;
-        boolean flag = true;
-
+    public T calculate(T n1, T n2, OperatorType op) {
+        T result;
+        //계산 조건
         switch (op) {
             case PLUS:
                 result = n1 + n2;
@@ -33,14 +33,18 @@ public class ArithmeticCalculator {
         return result;
     }
 
-    public List<Integer> getResult() {
+    //getter
+    public List<Double> getResult() {
         return results;
     }
-    public List<Integer> setResults(List<Integer> newResults) {
+
+    //setter
+    public List<Double> setResults(List<Double> newResults) {
         this.results = newResults;
         return results;
     }
 
+    //첫번째 인자 내용 삭제
     public void removeResults() {
         results.remove(0);
     }

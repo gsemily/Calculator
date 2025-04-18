@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public enum OperatorType {
     PLUS('+'),
     MINUS('-'),
@@ -11,10 +9,12 @@ public enum OperatorType {
         this.op = op;
     }
 
+    //getter
     private char getOp() {
         return op;
     }
 
+    //연산자 비교
     public static OperatorType getOpType(char input) {
         for(OperatorType symbol : OperatorType.values()) {
             if (symbol.getOp() == input)

@@ -1,3 +1,5 @@
+package operator;
+
 public enum OperatorType {
     PLUS('+'),
     MINUS('-'),

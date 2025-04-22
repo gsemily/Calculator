@@ -1,4 +1,4 @@
-package operator;
+package calculator;
 
 public enum OperatorType {
     PLUS('+'),

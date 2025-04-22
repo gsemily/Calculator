@@ -3,28 +3,28 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArithmeticCalculator<T> {
-    private final CalculatorOperator<T> operator;
-    private List<T> results = new ArrayList<>();
+public class ArithmeticCalculator<T extends Number> {
+    private static List<Double> results = new ArrayList<>();
 
-    public ArithmeticCalculator(CalculatorOperator<T> operator){
-        this.operator = operator;
-    }
+    public double calculate(T n1, T n2, OperatorType op) {
+        double a = n1.doubleValue();
+        double b = n2.doubleValue();
+        double result = 0;
 
-    public T calculate(T n1, T n2, OperatorType op) {
-        T result = null;
         switch (op) {
-            case OperatorType.PLUS:
-                result = operator.sum(n1, n2);
+            case PLUS:
+                result = a + b;
                 break;
-            case OperatorType.MINUS:
-                result = operator.sub(n1, n2);
+            case MINUS:
+                result = a - b;
                 break;
-            case OperatorType.MULTI:
-                result = operator.multi(n1, n2);
+            case MULTI:
+                result = a * b;
                 break;
-            case OperatorType.DIVIDE:
-                result = operator.div(n1, n2);
+            case DIVIDE:
+                if(b == 0.0)
+                    throw new ArithmeticException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                else result = a / b;
                 break;
             default:
                 System.out.println("올바른 연산자를 입력하시오.");
@@ -34,12 +34,12 @@ public class ArithmeticCalculator<T> {
     }
 
     //getter
-    public List<T> getResult() {
+    public List<Double> getResults() {
         return results;
     }
 
     //setter
-    public List<T> setResults(List<T> newResults) {
+    public List<Double> setResults(List<Double> newResults) {
         this.results = newResults;
         return results;
     }

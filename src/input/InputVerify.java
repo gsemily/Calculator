@@ -8,9 +8,8 @@ public class InputVerify {
         while (true) {
             System.out.print(message);
             String input = scanner.nextLine();
-
             try {
-                double value = Double.valueOf(input);
+                double value = Double.parseDouble(input);
                 if (value >= 0)
                     return input;
                 else System.out.println("0 이상의 숫자만 입력 가능합니다.");

@@ -28,9 +28,7 @@ public class RemoveResult {
                 }
             } else if (answer.equals("no")) {
                 break;
-            } else {
-                throw new IllegalArgumentException("y/n으로만 답할 수 있습니다.");
-            }
+            } else System.out.println("y/n으로만 답할 수 있습니다.");
         }
     }
 }

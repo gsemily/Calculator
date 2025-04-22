@@ -7,6 +7,8 @@ public enum OperatorType {
     DIVIDE('/');
 
     private final char op;
+
+    //setter
     OperatorType(char op) {
         this.op = op;
     }

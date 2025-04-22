@@ -25,7 +25,7 @@ public class Main {
             cal = CalculatorExecutor.execute(n1, n2, op);
 
             //계속할지 여부 확인
-            if (!check.askToContinue(cal)) break;
+            if (!check.checkContinue(cal)) break;
         }
         //계산결과 삭제
         remove.resultDelete(cal);

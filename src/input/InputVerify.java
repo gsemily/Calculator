@@ -14,7 +14,7 @@ public class InputVerify {
                     return input;
                 else System.out.println("0 이상의 숫자만 입력 가능합니다.");
             } catch (NumberFormatException e) {
-                System.out.println("숫자 형식이 아닙니다.");
+                System.out.println("유효한 숫자가 아닙니다.");
             }
         }
     }

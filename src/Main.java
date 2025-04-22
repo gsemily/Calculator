@@ -31,7 +31,7 @@ public class Main {
         remove.resultDelete(cal);
 
         // 입력값보다 큰 결과 출력
-        System.out.print("특정 숫자보다 큰 결과들을 보고 싶다면 숫자를 입력하시오 : ");
+        System.out.print("특정 숫자보다 큰 결과를 확인하고 싶다면 숫자를 입력하시오 : ");
         try {
             double input = Double.parseDouble(scanner.nextLine());
             ArithmeticCalculator.getResultsLargerThan(input);

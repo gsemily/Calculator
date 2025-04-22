@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import input.CalculatorExecutor;
+import input.TypeChecker;
 import input.InputVerify;
 import input.RemoveResult;
 import input.ContinueChecker;
@@ -22,7 +22,7 @@ public class Main {
             char op = scanner.next().charAt(0);
 
             //계산
-            cal = CalculatorExecutor.execute(n1, n2, op);
+            cal = TypeChecker.checkType(n1, n2, op);
 
             //계속할지 여부 확인
             if (!check.checkContinue(cal)) break;

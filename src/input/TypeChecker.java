@@ -4,8 +4,8 @@ import calculator.OperatorType;
 import calculator.ArithmeticCalculator;
 
 // 숫자 형태 감지 및 결과 출력
-public class CalculatorExecutor {
-    public static ArithmeticCalculator<? extends Number> execute(String n1, String n2, char op) {
+public class TypeChecker {
+    public static ArithmeticCalculator<? extends Number> checkType(String n1, String n2, char op) {
         OperatorType operator = OperatorType.getOpType(op);
         if (n1.contains(".") || n2.contains(".")) {
             //실수
